@@ -5,7 +5,7 @@
 # Watches for a target IP route via netlink (ip monitor route), replaces it
 # with a blackhole entry, logs actions, and supports configuration overrides.
 #
-# Copyright (c) 2026 — MIT License
+# 
 #
 
 set -euo pipefail
