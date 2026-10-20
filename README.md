@@ -230,7 +230,7 @@ youruser ALL=(root) NOPASSWD: /usr/sbin/ip route add blackhole *, /usr/sbin/ip r
 
 ## License
 
-MIT — see `LICENSE`.
+None
 
 ---
 
