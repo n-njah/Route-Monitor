@@ -27,20 +27,23 @@ sudo ip route get <IP>
 ```bash
 sudo nft list chain inet filter output
 ```
-(Optional) Testing the Enforcement
+
+---
+
+# (Optional) Testing the Enforcement
 Simulate a route addition and verify automatic removal:
 
-# In terminal 1: Start the daemon
+## In terminal 1: Start the daemon
 ```bash
 sudo systemctl start route-monitor.service
 ```
 
-# In terminal 2: Add a test route (replace YOUR_GW with actual gateway)
+## In terminal 2: Add a test route (replace YOUR_GW with actual gateway)
 ```bash
 sudo ip route add <IP> via YOUR_GW dev eth0
 ```
 
-# In terminal 3: Verify blocking
+## In terminal 3: Verify blocking
 ```bash
 ping -c 1 <IP>
 sudo nft list chain inet filter output
@@ -53,7 +56,7 @@ You should see:
 
 ---
 
-## 1. `BACKEND` Comparison Summary
+# 1. `BACKEND` Comparison Summary
 
 | Metric | `route` | `nftables` | `both` |
 |--------|---------|------------|--------|
@@ -66,7 +69,7 @@ You should see:
 
 ---
 
-## 2. Git Changes to Push
+# 2. Git Changes to Push
 
 After saving all files, stage and commit:
 
@@ -87,7 +90,7 @@ git push origin main
 
 ---
 
-## 3. /etc/route-monitor/config.conf
+# 3. /etc/route-monitor/config.conf
 ```bash
 # /etc/route-monitor/config.conf
 # Configuration for route-monitor daemon
@@ -118,7 +121,7 @@ RETRY_DELAY="30"
 
 ---
 
-## 4. /etc/systemd/system/route-monitor.service
+# 4. /etc/systemd/system/route-monitor.service
 ```bash
 [Unit]
 Description=Route Monitor Daemon (multi-backend)
@@ -153,7 +156,7 @@ WantedBy=multi-user.target
 
 ---
 
-## 5. /etc/logrotate.d/route-monitor
+# 5. /etc/logrotate.d/route-monitor
 ```bash
 /var/log/route_monitor/*.log {
     daily
@@ -171,7 +174,7 @@ WantedBy=multi-user.target
 
 ---
 
-## 6. /etc/nftables/route-monitor.rules (Optional Preload)
+# 6. /etc/nftables/route-monitor.rules (Optional Preload)
 ```bash
 #!/usr/sbin/nft -f
 #
