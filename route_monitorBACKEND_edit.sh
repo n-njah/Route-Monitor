@@ -6,7 +6,7 @@
 # blocking via configurable backend(s), logs actions, and supports hot-swap
 # between ROUTE, NFTABLES, and BOTH modes.
 #
-# Copyright (c) 2026 — MIT License
+# 
 #
 
 set -euo pipefail
