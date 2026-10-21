@@ -269,7 +269,7 @@ EOF
 sudo chmod 0640 /etc/route-monitor/config.conf
 ```
 
-Edit `TARGET_IP` to your actual target before proceeding.
+## Edit `TARGET_IP` to your actual target before proceeding.
 
 **3. Create the log directory**
 
