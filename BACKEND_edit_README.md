@@ -27,7 +27,7 @@ sudo ip route get <IP>
 ```bash
 sudo nft list chain inet filter output
 ```
-Testing the Enforcement
+(Optional) Testing the Enforcement
 Simulate a route addition and verify automatic removal:
 
 # In terminal 1: Start the daemon
