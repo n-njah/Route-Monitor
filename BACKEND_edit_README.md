@@ -23,7 +23,7 @@ Verify both enforcement channels after startup:
 # Route check
 sudo ip route get <IP>
 ```
-# nftables check  
+## nftables check  
 ```bash
 sudo nft list chain inet filter output
 ```
@@ -33,17 +33,17 @@ sudo nft list chain inet filter output
 # (Optional) Testing the Enforcement
 Simulate a route addition and verify automatic removal:
 
-## In terminal 1: Start the daemon
+## Start the daemon
 ```bash
 sudo systemctl start route-monitor.service
 ```
 
-## In terminal 2: Add a test route (replace YOUR_GW with actual gateway)
+## Add a test route (replace YOUR_GW with actual gateway)
 ```bash
 sudo ip route add <IP> via YOUR_GW dev eth0
 ```
 
-## In terminal 3: Verify blocking
+## Verify blocking
 ```bash
 ping -c 1 <IP>
 sudo nft list chain inet filter output
